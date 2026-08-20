@@ -1,0 +1,85 @@
+{
+  "policy_version": "v1-brody-aug2026",
+  "effective_date": "2026-08-20",
+  "owner_approved_by": "Nico J. Muccia",
+
+  "host_service_fee": {
+    "status": "approved",
+    "value": "10%",
+    "notes": "Standard host booking fee, charged at checkout."
+  },
+
+  "vendor_commission_tiers": {
+    "status": "approved",
+    "tiers": [
+      { "name": "Bros Connect", "commission": "15%" },
+      { "name": "Bros Pro", "commission": "10%" },
+      { "name": "Bros Premium", "commission": "7%" }
+    ],
+    "notes": "Commission-only figures are approved. Monthly subscription prices are NOT approved for Brody to quote — see vendor_plan_pricing below."
+  },
+
+  "vendor_plan_pricing": {
+    "status": "pending-owner-approval",
+    "value": null,
+    "notes": "Do not quote a monthly price (e.g. the previously used $9.99/5% combination is not confirmed current). Brody should say pricing details are provided during vendor onboarding."
+  },
+
+  "promotional_offers": {
+    "status": "not-active-unless-confirmed",
+    "elite_tier": null,
+    "bros_plus": null,
+    "bros_vip": null,
+    "founding_vendor_discount": null,
+    "free_year_offer": null,
+    "notes": "Brody must never mention any of these unless this file is updated to status: approved with an explicit value."
+  },
+
+  "checkout_mode": {
+    "status": "approved",
+    "value": "pay_in_full",
+    "notes": "Hosts pay in full at checkout. Do not describe deposits, installment plans, or partial payment."
+  },
+
+  "vendor_payout_trigger": {
+    "status": "approved",
+    "value": "on_host_completion_or_auto_release",
+    "auto_release_days": 7,
+    "notes": "Vendor is paid after the event: released when host marks the event complete, or automatically after 7 days if the host takes no action. Do NOT say vendors receive an advance or deposit before the event — that website language is outdated."
+  },
+
+  "payout_timing_details": {
+    "status": "pending-owner-approval",
+    "processing_timelines": null,
+    "dispute_exceptions": null,
+    "notes": "Exact processing windows and dispute-hold exceptions await final approval."
+  },
+
+  "stripe_required_for_requests": {
+    "status": "approved",
+    "value": true,
+    "notes": "Vendors must complete Stripe identity verification before they can receive Party Bros host requests."
+  },
+
+  "refund_policy_url": "https://thebrosplatform.com/refund-policy",
+
+  "support_contact": {
+    "public_email": "hello@thebrosplatform.com",
+    "notes": "Internal lead/support notifications go to the STAFF_NOTIFICATION_EMAIL env var, never hard-coded."
+  },
+
+  "approved_marketplace_metrics": {
+    "status": "language-only",
+    "approved_public_language": "Party Bros is building a growing network of event vendors across North, Central and South Jersey.",
+    "exact_totals_source": "pending-admin-metric-integration",
+    "notes": "Do not state exact vendor counts (e.g. '35+ vendors', '1,000+ vetted vendors'). Metric categories to track separately once wired up: total_accounts, verified_vendors, active_vendors. Never describe a registered account as verified or bookable without the verified_vendors flag."
+  },
+
+  "suppressed_claims": [
+    "35+ vendors joined",
+    "1,000+ vetted vendors",
+    "guaranteed vendor opportunities / requests",
+    "vendors get paid a deposit or advance up front",
+    "founding-vendor discounts or free-year offers (unless approved above)"
+  ]
+}

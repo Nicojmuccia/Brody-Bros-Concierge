@@ -1,0 +1,20 @@
+{
+  "always_escalate_intents": [
+    "existing_account_or_email_problem",
+    "existing_payment_or_payout_issue",
+    "vendor_stripe_troubleshooting_beyond_basics",
+    "abuse_or_prompt_extraction",
+    "partnership_press_investor_careers_legal"
+  ],
+  "never_answer_from_model": [
+    "account_balances",
+    "specific_booking_status",
+    "password_reset_codes",
+    "identity_document_requests"
+  ],
+  "sensitive_field_blocklist": [
+    "password", "ssn", "social security", "credit card", "card number",
+    "cvv", "bank account", "routing number", "verification code", "otp"
+  ],
+  "duplicate_lead_window_minutes": 30
+}

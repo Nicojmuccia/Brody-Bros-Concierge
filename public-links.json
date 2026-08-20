@@ -1,0 +1,13 @@
+{
+  "app_event_organizer_entry": "https://app.thebrosplatform.com/get-started?role=organizer",
+  "app_vendor_entry": "https://app.thebrosplatform.com/get-started?role=vendor",
+  "app_sign_in": "https://app.thebrosplatform.com/login",
+  "app_vendor_onboarding_resume": "https://app.thebrosplatform.com/vendor/onboarding",
+  "website_how_it_works": "https://thebrosplatform.com/how-it-works",
+  "website_vendor_categories": "https://thebrosplatform.com/vendors",
+  "website_pricing": "https://thebrosplatform.com/pricing",
+  "website_founder_story": "https://thebrosplatform.com/about",
+  "refund_policy": "https://thebrosplatform.com/refund-policy",
+  "ai_concierge_waitlist": "https://thebrosplatform.com/ai-concierge",
+  "support_contact": "mailto:hello@thebrosplatform.com"
+}
