@@ -1,0 +1,17 @@
+{
+  "name": "brody-concierge",
+  "version": "0.1.0",
+  "description": "Brody — Party Bros Concierge Engine (isolated from Clawdia/Barnaby/Mia)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.4.0",
+    "dotenv": "^16.4.5"
+  }
+}
