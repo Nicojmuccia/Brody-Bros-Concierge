@@ -1,0 +1,160 @@
+:root {
+  --brody-blue: #1c5cff;
+  --brody-blue-dark: #123fb0;
+  --brody-bg: #ffffff;
+  --brody-text: #1a1a1a;
+  --brody-muted: #6b7280;
+  --brody-radius: 16px;
+}
+
+#brody-root {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#brody-launcher {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid var(--brody-blue);
+  background: var(--brody-bg);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+#brody-launcher img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+.brody-online-dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid white;
+}
+
+#brody-tooltip {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  background: var(--brody-text);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+#brody-tooltip[hidden] { display: none; }
+
+#brody-panel {
+  position: absolute;
+  bottom: 88px;
+  right: 0;
+  width: 400px;
+  max-width: 92vw;
+  height: 640px;
+  max-height: 80vh;
+  background: var(--brody-bg);
+  border-radius: var(--brody-radius);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#brody-panel[hidden] { display: none; }
+
+#brody-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--brody-blue);
+  color: white;
+}
+#brody-header img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+#brody-header div { flex: 1; }
+.brody-subtitle { font-size: 12px; opacity: 0.85; }
+#brody-close { background: none; border: none; color: white; font-size: 22px; cursor: pointer; }
+
+#brody-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--brody-text);
+}
+
+.brody-msg { max-width: 85%; padding: 10px 14px; border-radius: 14px; line-height: 1.4; }
+.brody-msg.user { align-self: flex-end; background: var(--brody-blue); color: white; }
+.brody-msg.assistant { align-self: flex-start; background: #f1f3f6; color: var(--brody-text); }
+
+#brody-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 10px;
+}
+.brody-quick-btn {
+  border: 1px solid var(--brody-blue);
+  color: var(--brody-blue);
+  background: white;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.brody-quick-btn:hover { background: var(--brody-blue); color: white; }
+
+#brody-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+}
+#brody-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+#brody-send {
+  background: var(--brody-blue);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+#brody-send:hover { background: var(--brody-blue-dark); }
+
+#brody-privacy-note {
+  font-size: 11px;
+  color: var(--brody-muted);
+  padding: 0 16px 12px;
+}
+
+@media (max-width: 480px) {
+  #brody-panel {
+    position: fixed;
+    inset: auto 0 0 0;
+    width: 100%;
+    height: 85vh;
+    max-height: 85vh;
+    border-radius: 16px 16px 0 0;
+  }
+  #brody-root { right: 12px; bottom: 12px; }
+}

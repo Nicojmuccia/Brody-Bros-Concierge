@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brody — Party Bros Concierge</title>
+  <link rel="stylesheet" href="widget.css" />
+</head>
+<body>
+  <div id="brody-root">
+    <button id="brody-launcher" aria-label="Chat with Brody, your Party Bros concierge" aria-expanded="false">
+      <img src="assets/brody-avatar.png" alt="" onerror="this.style.display='none'" />
+      <span class="brody-online-dot"></span>
+    </button>
+
+    <div id="brody-tooltip" role="status">Planning a party? Ask Brody.</div>
+
+    <section id="brody-panel" role="dialog" aria-modal="false" aria-label="Brody chat" hidden>
+      <header id="brody-header">
+        <img src="assets/brody-avatar.png" alt="" onerror="this.style.display='none'" />
+        <div>
+          <strong>Brody</strong>
+          <div class="brody-subtitle">Your Party Bros Concierge</div>
+        </div>
+        <button id="brody-close" aria-label="Close chat">&times;</button>
+      </header>
+
+      <div id="brody-messages" aria-live="polite"></div>
+
+      <div id="brody-quick-actions"></div>
+
+      <form id="brody-form">
+        <input id="brody-input" type="text" maxlength="2000" placeholder="Ask Brody anything..." autocomplete="off" />
+        <button type="submit" id="brody-send" aria-label="Send">Send</button>
+      </form>
+
+      <div id="brody-privacy-note">
+        By chatting, you agree Party Bros may save this conversation to help with your request.
+        Don't share passwords, card numbers, or verification codes here.
+      </div>
+    </section>
+  </div>
+
+  <script src="widget.js"></script>
+</body>
+</html>
