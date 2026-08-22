@@ -6,7 +6,7 @@
   "host_service_fee": {
     "status": "approved",
     "value": "10%",
-    "notes": "Standard host booking fee, charged at checkout."
+    "notes": "  Standard host booking fee, charged at checkout."
   },
 
   "vendor_commission_tiers": {
