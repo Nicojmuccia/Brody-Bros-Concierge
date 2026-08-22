@@ -146,6 +146,7 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
     reply: modelEnvelope.reply,
     intent: modelEnvelope.intent,
     suggested_actions: executedActions,
+    quick_replies: (modelEnvelope.quick_replies || []).slice(0, 3),
     sessionId,
     promptVersion: PROMPT_VERSION,
   });
@@ -176,8 +177,10 @@ Respond with ONLY a single JSON object (no prose outside it, no markdown fences)
     { "type": "OPEN_URL", "label": "string", "url_key": "one of the approved url_keys" }
   ],
   "handoff_required": false,
-  "handoff_reason": null
+  "handoff_reason": null,
+  "quick_replies": ["string", "string"]
 }
+"quick_replies" is OPTIONAL and capped at 3 short (under ~6 words) natural next-step phrases the visitor could tap instead of typing, tailored to what they just asked (e.g. after a vendor-onboarding answer: "Check Stripe status", "Browse vendor categories" — not generic restatements of the 7 opening actions). Omit it entirely once the conversation is winding down or a handoff/URL action already covers the next step.
 Page context: ${JSON.stringify(pageContext)}
 Pre-classified intent hint (may be wrong, use your own judgment): ${preClassifiedIntent}
 `.trim();
