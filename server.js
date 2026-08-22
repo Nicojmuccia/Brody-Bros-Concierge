@@ -1,6 +1,8 @@
-// server.js — Brody backend (Phase 1 scaffold, NOT deployed)
+// server.js — Bros AI Concierge backend (Phase 1 scaffold, NOT deployed)
 // Isolated project. Does not touch Clawdia, Barnaby, Mia, or the Party
-// Bros production app in any way.
+// Bros production app in any way. (Repo/package/internal id names remain
+// "brody-concierge"/"brody-*" — the infrastructure identifier, not the
+// visitor-facing brand name.)
 
 require('dotenv').config();
 const express = require('express');
@@ -21,7 +23,7 @@ const { getPolicy } = require('./src/policy');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const PROMPT_VERSION = 'v1-brody-aug2026';
+const PROMPT_VERSION = 'v2-bros-ai-concierge-aug2026';
 
 // ---- Exact CORS allowlist (no substring matching) ----
 const ALLOWED_ORIGINS = new Set(
@@ -50,6 +52,13 @@ app.use(
   })
 );
 app.use(express.json({ limit: '100kb' })); // request body size limit
+// The public static assets (embed.js, widget.js, widget.css) are loaded
+// cross-origin by design — embed.js runs on the marketing site's domain
+// and fetches these from this server's own domain. Helmet's default
+// Cross-Origin-Resource-Policy is same-origin, which would silently block
+// exactly that; scope a permissive override to just these three files
+// rather than weakening it site-wide (the /api/chat route stays governed
+// by the strict CORS allowlist above, untouched by this).
 app.use(['/embed.js', '/widget.js', '/widget.css'], (req, res, next) => {
   res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -166,7 +175,7 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
 // ---- Model call ----
 // Matches the Clawdia/Barnaby/Mia fleet: OpenAI Chat Completions,
 // gpt-4o-mini, server-side key only. Unlike Clawdia (free-text reply with
-// a delimiter-marked data block parsed by regex), Brody asks for a JSON
+// a delimiter-marked data block parsed by regex), the Bros AI Concierge asks for a JSON
 // object directly via response_format so the envelope can be schema-
 // validated instead of regex-parsed — see src/validation.js.
 const OPENAI_MODEL = 'gpt-4o-mini';
@@ -232,7 +241,7 @@ Pre-classified intent hint (may be wrong, use your own judgment): ${preClassifie
 }
 
 app.listen(PORT, () => {
-  console.log(`Brody backend listening on port ${PORT} (prompt ${PROMPT_VERSION})`);
+  console.log(`Bros AI Concierge backend listening on port ${PORT} (prompt ${PROMPT_VERSION})`);
 });
 
 module.exports = app;
