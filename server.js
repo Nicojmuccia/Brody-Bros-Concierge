@@ -42,8 +42,19 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginResourcePolicy: {
+      policy: 'cross-origin',
+    },
+  })
+);
 app.use(express.json({ limit: '100kb' })); // request body size limit
+app.use(['/embed.js', '/widget.js', '/widget.css'], (req, res, next) => {
+  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 app.use(express.static('public'));
 
 // ---- Rate limiting ----
