@@ -1,7 +1,7 @@
 {
   "name": "brody-concierge",
   "version": "0.1.0",
-  "description": "Brody — Party Bros Concierge Engine (isolated from Clawdia/Barnaby/Mia)",
+  "description": "Bros AI Concierge — Party Bros' personal party planning assistant, built on the Brody Phase 1 engine (isolated from Clawdia/Barnaby/Mia)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
