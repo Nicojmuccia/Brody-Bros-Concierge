@@ -1,12 +1,12 @@
 {
-  "policy_version": "v1-brody-aug2026",
+  "policy_version": "v2-bros-ai-concierge-aug2026",
   "effective_date": "2026-08-20",
   "owner_approved_by": "Nico J. Muccia",
 
   "host_service_fee": {
     "status": "approved",
     "value": "10%",
-    "notes": "  Standard host booking fee, charged at checkout."
+    "notes": "Standard host booking fee, charged at checkout."
   },
 
   "vendor_commission_tiers": {
@@ -16,13 +16,13 @@
       { "name": "Bros Pro", "commission": "10%" },
       { "name": "Bros Premium", "commission": "7%" }
     ],
-    "notes": "Commission-only figures are approved. Monthly subscription prices are NOT approved for Brody to quote — see vendor_plan_pricing below."
+    "notes": "Commission-only figures are approved. Monthly subscription prices are NOT approved for the Bros AI Concierge to quote — see vendor_plan_pricing below."
   },
 
   "vendor_plan_pricing": {
     "status": "pending-owner-approval",
     "value": null,
-    "notes": "Do not quote a monthly price (e.g. the previously used $9.99/5% combination is not confirmed current). Brody should say pricing details are provided during vendor onboarding."
+    "notes": "Do not quote a monthly price (e.g. the previously used $9.99/5% combination is not confirmed current). The Bros AI Concierge should say pricing details are provided during vendor onboarding."
   },
 
   "promotional_offers": {
@@ -32,7 +32,7 @@
     "bros_vip": null,
     "founding_vendor_discount": null,
     "free_year_offer": null,
-    "notes": "Brody must never mention any of these unless this file is updated to status: approved with an explicit value."
+    "notes": "The Bros AI Concierge must never mention any of these unless this file is updated to status: approved with an explicit value."
   },
 
   "checkout_mode": {
