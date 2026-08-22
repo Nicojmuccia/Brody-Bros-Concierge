@@ -3,24 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brody — Party Bros Concierge</title>
+  <title>Bros AI Concierge — Party Bros</title>
   <link rel="stylesheet" href="widget.css" />
 </head>
 <body>
   <div id="brody-root">
-    <button id="brody-launcher" aria-label="Chat with Brody, your Party Bros concierge" aria-expanded="false">
-      <img src="assets/brody-avatar.png" alt="" onerror="this.style.display='none'" />
+    <button id="brody-launcher" aria-label="Chat with the Bros AI Concierge" aria-expanded="false">
+      <svg class="brody-orb-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><radialGradient id="brodyOrbGradLauncher" cx="35%" cy="30%" r="75%">
+          <stop offset="0%" stop-color="#6fa8ff"/><stop offset="55%" stop-color="#1c5cff"/><stop offset="100%" stop-color="#0b2559"/>
+        </radialGradient></defs>
+        <circle cx="50" cy="50" r="48" fill="url(#brodyOrbGradLauncher)"/>
+        <path class="brody-orb-spark" d="M50 26 L57 43 L74 50 L57 57 L50 74 L43 57 L26 50 L43 43 Z" fill="#ffffff" opacity="0.92"/>
+      </svg>
       <span class="brody-online-dot"></span>
     </button>
 
-    <div id="brody-tooltip" role="status">Planning a party? Ask Brody.</div>
+    <div id="brody-tooltip" role="status">Planning a party? Ask Bros AI.</div>
 
-    <section id="brody-panel" role="dialog" aria-modal="false" aria-label="Brody chat" hidden>
+    <section id="brody-panel" role="dialog" aria-modal="false" aria-label="Bros AI Concierge chat" hidden>
       <header id="brody-header">
-        <img src="assets/brody-avatar.png" alt="" onerror="this.style.display='none'" />
+        <svg class="brody-orb-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><radialGradient id="brodyOrbGradHeader" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#6fa8ff"/><stop offset="55%" stop-color="#1c5cff"/><stop offset="100%" stop-color="#0b2559"/>
+          </radialGradient></defs>
+          <circle cx="50" cy="50" r="48" fill="url(#brodyOrbGradHeader)"/>
+          <path class="brody-orb-spark" d="M50 26 L57 43 L74 50 L57 57 L50 74 L43 57 L26 50 L43 43 Z" fill="#ffffff" opacity="0.92"/>
+        </svg>
         <div>
-          <strong>Brody</strong>
-          <div class="brody-subtitle">Your Party Bros Concierge</div>
+          <strong>Bros AI Concierge</strong>
+          <div class="brody-subtitle">Your Personal Party Planning Assistant</div>
         </div>
         <button id="brody-close" aria-label="Close chat">&times;</button>
       </header>
@@ -30,13 +42,12 @@
       <div id="brody-quick-actions"></div>
 
       <form id="brody-form">
-        <input id="brody-input" type="text" maxlength="2000" placeholder="Ask Brody anything..." autocomplete="off" />
+        <input id="brody-input" type="text" maxlength="2000" placeholder="Ask Bros AI anything..." autocomplete="off" />
         <button type="submit" id="brody-send" aria-label="Send">Send</button>
       </form>
 
       <div id="brody-privacy-note">
-        By chatting, you agree Party Bros may save this conversation to help with your request.
-        Don't share passwords, card numbers, or verification codes here.
+        Conversations may be saved to assist with your request. Never share passwords or payment information.
       </div>
     </section>
   </div>
